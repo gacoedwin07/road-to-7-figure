@@ -159,7 +159,7 @@ const MONTHS=['January','February','March','April','May','June','July','August',
 const SHORT=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const incomeRows=[['fulltime','Fulltime Job'],['eds','Ed’s Mark.'],['side','Side Income']];
 const billRows=[['bills','Bills'],['loans','Loans'],['subscription','Subscription'],['personal','Personal'],['maintenance','Maintenance']];
-const bankRows=[['wise','Wise'],['globeGcash','Globe - Gcash'],['mari','MariBank'],['tntGcash','TNT - Gcash'],['bdoClassic','Banco De Oro'],['maya','Maya Bank'],['bdoNet','BDO Net Bank'],['unionBank','Union Bank'],['uno','UNO Bank (Savings)'],['cash','Cash on Hand']];
+const bankRows=[['wise','Wise'],['globeGcash','Globe - Gcash'],['mari','MariBank'],['tntGcash','TNT - Gcash'],['bdoClassic','Banco De Oro'],['maya','Maya Bank'],['bdoNet','BDO Net Bank'],['globeOne','Globe One'],['uno','UNO Bank (Savings)'],['cash','Cash on Hand']];
 const loanDefaults=[
   {name:'Motorcycle Loan',amount:259200,payments:[7200,7200,7200,7200,7200,7200,7200,7200,7200,7200,7200,7200,14400,0,14400,0,7200,0,0,0,0,0,0,0]},
   {name:'SpayLater',amount:32400,payments:[3240,3240,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]}
@@ -175,7 +175,7 @@ function initData(){
   D.year=D.year||2026;
   if(!D.income){D.income=MONTHS.map((_,i)=>({fulltime:i===0?58000:0,eds:0,side:0}))}
   if(!D.bills){D.bills=MONTHS.map(()=>({checked:false,bills:10200,loans:10440,subscription:4840,personal:15000,maintenance:7400}))}
-  if(!D.banks){D.banks={wise:0,globeGcash:0,mari:0,tntGcash:0,bdoClassic:0,maya:0,bdoNet:0,unionBank:0,uno:0,cash:0}}
+  if(!D.banks){D.banks={wise:0,globeGcash:0,mari:0,tntGcash:0,bdoClassic:0,maya:0,bdoNet:0,globeOne:0,uno:0,cash:0}}
   if(!D.scenario){D.scenario=Array(12).fill('')}
   if(!D.loans){D.loans=JSON.parse(JSON.stringify(loanDefaults))}
 }
@@ -190,7 +190,7 @@ function clearData(){
       year: Number($('yearSelect')?.value)||2026,
       income: MONTHS.map(()=>({fulltime:0,eds:0,side:0})),
       bills: MONTHS.map(()=>({checked:false,bills:0,loans:0,subscription:0,personal:0,maintenance:0})),
-      banks: {wise:0,globeGcash:0,mari:0,tntGcash:0,bdoClassic:0,maya:0,bdoNet:0,unionBank:0,uno:0,cash:0},
+      banks: {wise:0,globeGcash:0,mari:0,tntGcash:0,bdoClassic:0,maya:0,bdoNet:0,globeOne:0,uno:0,cash:0},
       scenario: Array(12).fill(''),
       loans: [
         {name:'',amount:0,payments:Array(24).fill(0)},
